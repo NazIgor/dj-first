@@ -1,0 +1,11 @@
+{
+  "name": "first_root",
+  "version": "1.0.0",
+  "description": "Django project",
+  "main": "manage.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igor Nazarenko",
+  "license": "ISC"
+}
