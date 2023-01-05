@@ -7,8 +7,25 @@
     <title>Django Project</title>
 </head>
 <body>
-    <h1>{{ a }}</h1>
-    <h3>{{text}}</h3>
     
+
+    <table border="1">
+
+        <tr>
+            <td>ID</td>
+            <td>Date</td>
+            <td>Name</td>
+            <td>Phone</td>
+        </tr>
+{% for obj in order_list}
+        <tr>
+            <th>{{obj.id}}}</th>
+            <th>{{obj.order_date}}</th>
+            <th>{{obj.order_name}}</th>
+            <th>{{obj.order_phone}}</th>
+        </tr>
+{% %}
+    </table>
+
 </body>
 </html>
