@@ -7,7 +7,7 @@
     <title>Django Project</title>
 </head>
 <body>
-    
+{% if order_list %}
 
     <table border="1">
 
@@ -17,15 +17,17 @@
             <td>Name</td>
             <td>Phone</td>
         </tr>
-{% for obj in order_list}
+{% for obj in order_list %}
         <tr>
-            <th>{{obj.id}}}</th>
+            <th>{{obj.id}}</th>
             <th>{{obj.order_date}}</th>
             <th>{{obj.order_name}}</th>
             <th>{{obj.order_phone}}</th>
         </tr>
-{% %}
+{% endfor %}
     </table>
-
+{% else %}
+<h3>Данные отсутсвуют</h3>
+{% endif %}
 </body>
 </html>
