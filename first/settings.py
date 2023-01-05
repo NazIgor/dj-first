@@ -1,3 +1,5 @@
+import os
+print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 """
 Django settings for first project.
 
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'first.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['first/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
