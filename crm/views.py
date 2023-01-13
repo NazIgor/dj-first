@@ -1,13 +1,24 @@
 from django.shortcuts import render
 from .models import Order
 from .form import OrderForm
+from cms.models import CmsSlider
+from price.models import PriceCard, PriceTable
 
 
 
 def first_page(request):
-    order_list=Order.objects.all()
     form=OrderForm()
-    return render(request,'./index.html',{'order_list':order_list, 'form':form})
+    slider_list=CmsSlider.objects.all()
+    pc_all=PriceCard.objects.all()
+    pc=pc_all[0:3]
+    pt=PriceTable.objects.all()
+    data={
+        'slider_list':slider_list,
+        'pc':pc,
+        'pt':pt,
+        'form':form
+    }
+    return render(request,'./index.html',data )
 
 def thanks_page(request):    
     name=request.POST['name']

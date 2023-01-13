@@ -35,12 +35,15 @@
   </header>
 {% endblock %}
 
-{% block slider%} {% endblock %}
 
-{% block servicepak %} {% endblock %}
 
-{% block content %} {% endblock%}
 
+
+{% block content %} 
+    {% include 'courusel.html' %} 
+    {% include 'servicepak.html' %}
+{% endblock%}
+{% block feedback %} {% endblock %}
 {% block footer%}
     <footer class="p-3 bg-dark text-white">
       <div class="container">
