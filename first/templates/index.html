@@ -8,20 +8,32 @@
 
 {% block feedback %}
 <section>
-    <div class="container m_b-10 text-center">
-        <h3 class="">Оставьте заявку</h3>
-        <div class="form-container">
-            <form action="{% url 'thanks' %}" method="post">
+    <div class="container class_form inn_con">
+        <h3 class="text-3">Оставьте заявку</h3>
+        <div class="row justify-content-center">
+            <form action="{% url 'thanks' %}" method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn-primary">Отправить</button>
+                <div class="form-group row mb-2">
+                    <label for="name" class="col-sm-2 col-form-label fw-bold" >Имя</label>
+                    {{ form.name }}
+                </div>
+                <div class=""></div>
+                <div class="form-group row mb-2">
+                    <label for="phone"class="col-sm-2 col-form-label  fw-bold">Телефон</label>
+                    {{ form.phone }}
+                </div>
+                <div class=""></div>
+                <div class="form-group row mb-10">
+                    <button type="submit" class="btn btn-success ">Отправить</button>
+                </div>
             </form>
-            <br>
-
-            <br>
-        </div>
+            
+        </div>        
     </div>
 </section>
+<br>
+<br>
+
 {% endblock %}
 
 

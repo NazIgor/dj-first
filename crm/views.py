@@ -3,7 +3,7 @@ from .models import Order
 from .form import OrderForm
 from cms.models import CmsSlider
 from price.models import PriceCard, PriceTable
-
+from telebot.sendmessage import sendTelega
 
 
 def first_page(request):
@@ -26,6 +26,7 @@ def thanks_page(request):
     if name and phone:
         element=Order(order_name=name, order_phone=phone)
         element.save()
+        sendTelega(tg_name=name, tg_phone=phone)
         text=' ваши данные отправленны на сервер'
     else:
         name=''
